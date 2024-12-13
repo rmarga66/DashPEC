@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Patient</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <img src="/static/logo.png" alt="Logo">
+        <h1>Ajouter un Patient</h1>
+    </header>
+    <main>
+        <form action="/add" method="post">
+            <label>Nom:</label>
+            <input type="text" name="nom" required>
+            <label>Prénom:</label>
+            <input type="text" name="prenom" required>
+            <label>Date de naissance:</label>
+            <input type="text" name="date_naissance">
+            <label>Indication:</label>
+            <select name="indication" required>
+                {% for indication in indications %}
+                <option value="{{ indication }}">{{ indication }}</option>
+                {% endfor %}
+            </select>
+            <label>Début du traitement:</label>
+            <input type="text" name="debut_traitement" required>
+            <label>Fin du traitement:</label>
+            <input type="text" name="fin_traitement">
+            <label>Actif:</label>
+            <select name="actif" required>
+                <option value="Actif">Actif</option>
+                <option value="Inactif">Inactif</option>
+            </select>
+            <button type="submit">Ajouter</button>
+        </form>
+    </main>
+    <footer>© 2024 - Application Patient</footer>
+</body>
+</html>

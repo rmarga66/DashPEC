@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <img src="/static/logo.png" alt="Logo" style="height: 50px;">
+        <h1>Tableau de Bord</h1>
+    </header>
+    <p>Nombre de patients actifs: {{ active_count }}</p>
+    <p>Nombre de patients inactifs: {{ inactive_count }}</p>
+    <h2>Répartition des indications</h2>
+    <img src="data:image/png;base64,{{ chart_data }}" alt="Graphique" class="dashboard-img">
+    <footer>© 2024 - Application Patient</footer>
+</body>
+</html>
